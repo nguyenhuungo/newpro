@@ -24,11 +24,12 @@ public class itemController {
     }
 
 
-    @PostMapping("/edit/{id}")
+    @GetMapping("/edit/{id}")
     public ModelAndView edit(@PathVariable("id") String ids) {
-        ModelAndView modelAndView = new ModelAndView("index");
+        ModelAndView modelAndView = new ModelAndView("update");
         int id = Integer.parseInt(ids);
-        modelAndView.addObject("item_edit",this.service.getItemById(id)) ;
+        modelAndView.addObject("item",this.service.getItemById(id)) ;
+        System.out.println("123"+this.service.getItemById(id));
         return modelAndView;
     }
 }

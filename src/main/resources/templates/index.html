@@ -14,7 +14,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Status</th>
-                <th scope="col">Handle</th>
+                <th colspan="2">Handle</th>
               </tr>
             </thead>
             <tbody>
@@ -22,7 +22,14 @@
                     <tr>
                        <td th:text="${item.id}"></td>
                        <td th:text="${item.name}"></td>
-                       <td th:text="${item.status}"></td>
+                       <td th:th:switch="${item.status}">
+                        <span th:case="0">Active</span>
+                        <span th:case="1">Inactive</span>
+                       </td>
+                       <td>Delete</td>
+                       <td>
+                        <a th:href="@{/item/edit/{id}(id = ${item.id})}">Edit</a>
+                      </td>
                     </tr>
                  </th:block>
             </tbody>
