@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface ItemInterface {
     public List<Items> getAllItem();
     public String addItem(Items items);
-    public String updateItem(Items items, int id);
+    public String updateItem(Items items);
     public String deleteItem( int id);
 
     public Optional<Items> getItemById(int id);

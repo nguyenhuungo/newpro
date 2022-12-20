@@ -24,15 +24,9 @@ public class ItemService implements ItemInterface{
     }
 
     @Override
-    public String updateItem(Items items, int id) {
-        Optional<Items> items1 =  this.itemRespon.findById(id);
-        if(items1.isPresent()){
-           return "Không tìm thấy item này";
-        }else {
-            items.setId(id);
-            this.itemRespon.save(items);
-            return "Update thành công item";
-        }
+    public String updateItem(Items items) {
+        this.itemRespon.save(items);
+        return null;
     }
 
     @Override
